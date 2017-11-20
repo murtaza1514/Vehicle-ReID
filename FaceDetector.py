@@ -1,6 +1,7 @@
 import cv2
 
 if __name__ == '__main__':
+    #Path to file having the face detection algorithm.
     cascPath = "haarcascade_frontalface_default.xml"
 
     # Create the haar cascade
@@ -26,6 +27,7 @@ if __name__ == '__main__':
             cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 0), 2)
 
         cv2.imshow("Face Detector", frame)
+        #Wait for 10 milliseconds and then show next frame(new loop), press q to quit.
         if cv2.waitKey(10) & 0xFF == ord('q'):
             cap.release()
             break
